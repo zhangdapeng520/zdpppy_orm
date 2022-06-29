@@ -6,6 +6,6 @@
 # @File    : __init__.py.py
 # @Software: PyCharm
 # @Description: 文档描述
-import pymysql
+import zdppy_mysql
 
-pymysql.install_as_MySQLdb()
+zdppy_mysql.install_as_MySQLdb()

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zdppy_orm"
-version = "0"
+version = "0.1.0"
 description = "Python ORM框架，完美兼容zdppy_api"
 authors = ["zhangdapeng520 <pygosuperman@outlook.com>"]
 readme = "README.md"
@@ -36,6 +36,7 @@ url = "https://mirrors.aliyun.com/pypi/simple/"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+zdppy-mysql = "^0.2.5"
 
 [tool.poetry.dev-dependencies]
 

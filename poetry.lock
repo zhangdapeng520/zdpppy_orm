@@ -1,8 +1,18 @@
-package = []
+[[package]]
+name = "zdppy-mysql"
+version = "0.2.4"
+description = "使用python操作MySQL,同步版本,支持事务"
+category = "main"
+optional = false
+python-versions = ">=3.9,<4.0"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c219dd6e6e304292585fe2c276348baafa01578f0ef293ff0780d698ac5bfb8a"
+content-hash = "a16529362f31ec857389100bbe89b8385c80297c119b627740fcc527f90165f2"
 
 [metadata.files]
+zdppy-mysql = [
+    {file = "zdppy_mysql-0.2.4-py3-none-any.whl", hash = "sha256:41e8fafb490d3df36f241077f7fcdf697a3a1cf0f76150a83aa8248e28a0bfd6"},
+    {file = "zdppy_mysql-0.2.4.tar.gz", hash = "sha256:b747f67f65aa06578c034df7ab8443f5b716815de5741be89ddf8f503cc12c52"},
+]
