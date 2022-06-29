@@ -1,0 +1,92 @@
+[tool.poetry]
+name = "zdppy_orm"
+version = "0"
+description = "Python ORM框架，完美兼容zdppy_api"
+authors = ["zhangdapeng520 <pygosuperman@outlook.com>"]
+readme = "README.md"
+homepage = "https://github.com/tiangolo/sqlmodel"
+documentation = "https://sqlmodel.tiangolo.com"
+repository = "https://github.com/tiangolo/sqlmodel"
+license = "MIT"
+exclude = ["sqlmodel/sql/expression.py.jinja2"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Internet",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Internet :: WWW/HTTP",
+    "Typing :: Typed",
+]
+
+# 指定从镜像源下载
+[[tool.poetry.source]]
+name = "ali"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-version-plugin]
+source = "init"
+
+[tool.coverage.run]
+parallel = true
+source = [
+    "docs_src",
+    "tests",
+    "sqlmodel"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    'if __name__ == "__main__":',
+    "if TYPE_CHECKING:",
+]
+
+[tool.isort]
+profile = "black"
+known_third_party = ["sqlmodel"]
+skip_glob = [
+    "sqlmodel/__init__.py",
+    ]
+
+
+[tool.mypy]
+# --strict
+disallow_any_generics = true
+disallow_subclassing_any = true 
+disallow_untyped_calls = true 
+disallow_untyped_defs = true
+disallow_incomplete_defs = true 
+check_untyped_defs = true 
+disallow_untyped_decorators = true 
+no_implicit_optional = true
+warn_redundant_casts = true 
+warn_unused_ignores = true
+warn_return_any = true 
+implicit_reexport = false
+strict_equality = true
+# --strict end
+
+[[tool.mypy.overrides]]
+module = "sqlmodel.sql.expression"
+warn_unused_ignores = false
